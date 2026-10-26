@@ -13,19 +13,47 @@
 </head>
 <body>
 
-        <h1>You Haven’t Truly Lived Until You’ve Seen <em>Lahore.</em></h1>
-        
+      <!-- Introduction -->
+    <header class="hero">
 
-        <p class="intro">
-          Pakistan is full of sounds that tell stories about everyday life.
-          From busy streets to quiet evenings, this soundscape explores
-          the little things that can make a place feel like home.
-        </p>
+        <div class="hero-image" aria-hidden="true"></div>
 
-        <a class="text-link" href="#listen">
-          Listen to the Soundscape ↓
-        </a>
-      </div>
+        <nav class="topbar">
+            <span class="logo">SOUNDS OF LAHORE</span>
+            <a href="#explore">Explore the city ↓</a>
+        </nav>
+
+        <div class="hero-content">
+
+          
+
+           <h1>You Haven’t Truly Lived Until You’ve Seen <em>Lahore.</em></h1>
+
+            <p class="intro">
+                An evening in Lahore can be pretty loud. There is traffic
+                on the roads, food being made at street stalls, and people
+                out shopping or meeting friends. 
+            </p>
+
+            <button id="ambienceButton" class="ambience-button"
+                    type="button" aria-pressed="false">
+                What lahore sounds like...
+            </button>
+
+        </div>
+
+        <div class="hero-footer">
+            <span>LAHORE, PAKISTAN</span>
+        </div>
+
+        <audio id="streetAmbience" loop preload="none">
+            <source src="audio/lahoresound.mp3" type="audio/mpeg">
+        </audio>
+
+    </header>
+
+
+
 
       <div class="hero-art">
     <img src="images/mosque.jpg">
@@ -34,47 +62,133 @@
 </div>
 
 
-    </section>
 
-    <section class="listen-section" id="listen">
-      <div class="section-heading">
-        <p class="eyebrow">01 / Listen</p>
-        <h2>This is what Lahore <br><em>sounds like...</em></h2>   
-      </div>
 
-      <div class="player-card">
-        <div class="player-top">
-          <div class="sound-icon" id="soundIcon">♫</div>
+    <main id="explore">
 
-          <div>
-            <p class="track-title">An Evening in Pakistan</p>
-            <p class="track-subtitle">
-              Street life, distant calls and evening sounds
+        <section class="scene-section">
+
+            <div class="section-heading">
+                <p class="eyebrow">01 / EXPLORE</p>
+
+                <h2>What to expect when visiting <em>Lahore.</em></h2>
+
+                <p>
+                    The sounds change as you move around the city.
+                    Pick a scene to change the photo and read a little
+                    about what's happening.
+                </p>
+            </div>
+
+
+            <!-- Scene selection -->
+            <div class="scene-buttons" role="group"
+                 aria-label="Choose a Lahore scene">
+
+                <button class="scene-button is-active"
+                        type="button" data-scene="0"
+                        aria-pressed="true">
+                    Street Life
+                </button>
+
+                <button class="scene-button"
+                        type="button" data-scene="1"
+                        aria-pressed="false">
+                    Food  Markets
+                </button>
+
+                <button class="scene-button"
+                        type="button" data-scene="2"
+                        aria-pressed="false">
+                     Evening Lights
+                </button>
+
+            </div>
+
+
+            <!-- One card that changes when a button is pressed -->
+            <article class="scene-card">
+
+                <div class="scene-visual">
+
+                    <img id="sceneImage" src="images/street.jpg">
+
+                    <p id="photoCaption" class="photo-caption">
+                        Traffic and people on the move
+                    </p>
+
+                    <div class="detail-photo">
+                        <img id="detailImage"
+                             src="images/shop.jpg">
+
+                        <p id="detailCaption">Small shops along the way</p>
+                    </div>
+
+                </div>
+
+
+                <div class="scene-copy" aria-live="polite">
+
+                    <p class="eyebrow" id="sceneEyebrow">
+                        01 / STREET LIFE
+                    </p>
+
+                    <h3 id="sceneTitle">The streets are still busy.</h3>
+
+                    <p id="sceneText">
+                        Cars and bikes pass, people cross the road,
+                        and shops carry on around them. It can get
+                        noisy, but that constant movement is part
+                        of what makes Lahore feel so alive.
+                    </p>
+
+                </div>
+
+
+                <!-- The same player is reused for all three scenes -->
+                <div class="audio-panel">
+
+                    <div class="audio-heading">
+                        <div>
+                            <p class="track-title">Listen to the soundscape</p>
+                            <p id="trackSubtitle">
+                                Traffic, footsteps and passing horns
+                            </p>
+                        </div>
+                    </div>
+
+                    <audio id="sceneAudio" controls preload="metadata">
+                        <source id="sceneAudioSource"
+                                src="audio/street-life.mp3"
+                                type="audio/mpeg">
+
+                        Your browser does not support audio playback.
+                    </audio>
+
+                    <div class="progress" aria-hidden="true">
+                        <div id="audioProgress" class="progress-bar"></div>
+                    </div>
+
+                    <p id="audioStatus" class="audio-status"
+                       aria-live="polite">
+                        Choose a scene and press play.
+                    </p>
+
+                </div>
+
+            </article>
+
+            <p class="page-note">
+                Each scene has its own sound. Use the buttons to switch
+                between them.
             </p>
-          </div>
 
-          <span class="duration" id="duration">01:00</span>
-        </div>
+        </section>
 
-        <audio id="soundscape" controls preload="metadata">
-          <source src="audio/soundscape.mp3" type="audio/mpeg">
-        </audio>
-
-        <div class="progress-line">
-          <span id="progress"></span>
-        </div>
-
-        <div class="player-bottom">
-          <span id="status">READY TO PLAY</span>
-          <span>HEADPHONES RECOMMENDED</span>
-        </div>
-      </div>
-
-      <p class="note">
-        Listen to the different sounds and imagine the scene they create.
-        Headphones may help you notice more details.
-      </p>
+    </main>
     
+ 
+      
 
 
 
