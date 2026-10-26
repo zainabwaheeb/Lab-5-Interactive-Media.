@@ -160,6 +160,7 @@ h2 em {
     height: 100%;
     object-fit: cover;
     object-position: center;
+    
 }
 
 .hero-art::after {
@@ -260,8 +261,7 @@ h2 em {
     font-weight: 600;
     cursor: pointer;
 
-    transition: background 0.2s, color 0.2s;
-}
+transition: background 0.2s ease, color 0.2s ease;} 
 
 .scene-button:hover {
     border-color: var(--green);
@@ -519,7 +519,16 @@ audio {
 
 .hero-image {
     transition: transform 80s linear;
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+
+    background-image: url("../images/header.jpg");
+    background-position: center;
+    background-size: cover;
+    opacity: 0.5;
 }
+
 
 .hero-image.is-playing {
     transform: scale(1.1);
